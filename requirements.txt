@@ -1,4 +1,4 @@
 a2squery==1.1.0
-fastapi==0.143.3
+fastapi[standard]==0.143.3
 slowapi==0.1.10
 uv==0.13.1
