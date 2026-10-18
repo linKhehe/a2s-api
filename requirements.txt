@@ -1,4 +1,6 @@
-a2squery==1.1.0
+a2squery==1.2.1
 fastapi[standard]==0.143.3
 slowapi==0.1.10
 uv==0.13.1
+cashews==7.6.0
+redis==8.1.0

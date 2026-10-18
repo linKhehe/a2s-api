@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    container_name: a2s_api
+
+    ports:
+      - "${HOST_PORT:-8000}:8000"
+
+    environment:
+      - REDIS_HOST=redis_cache
+      - REDIS_PORT=6379
+
+    depends_on:
+      - redis_cache
+
+    restart: unless-stopped
+
+  redis_cache:
+    image: redis:7-alpine
+    container_name: a2s_api_redis_cache
+
+    command: redis-server --save "" --appendonly no
+
+    restart: unless-stopped
